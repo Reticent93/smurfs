@@ -13,13 +13,13 @@ const Smurfed = styled.div`
 
 
 
-const  Smurfs = (props) => {
+const  Smurfs = ({smurf}) => {
     useEffect(() => {
-        props.fetchSmurfs()
+        fetchSmurfs()
     }, [])
     return (
         <Smurfed>
-            {props.smurf.map((smurf) => (
+            {smurf.map((smurf) => (
                 <Smurf key={smurf.id} smurf={smurf} />
             ))}
         </Smurfed>
