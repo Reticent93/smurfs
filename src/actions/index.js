@@ -12,7 +12,7 @@ export function fetchSmurfs() {
     return (dispatch) => {
         dispatch({ type: FETCH_SMURF_START });
         axios
-            .get('http://localhost:3333/smurfs')
+            .get('/.netlify/functions/smurfs')
             .then((res) => {
                 dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data });
             })
@@ -27,7 +27,7 @@ export function postSmurfs(smurfs) {
     return (dispatch) => {
         dispatch({ type: POST_SMURF_START });
         axios
-            .post('http://localhost:3333/smurfs', smurfs)
+            .post('/.netlify/functions/smurfs', smurfs)
             .then((res) => {
                 dispatch({ type: POST_SMURF_SUCCESS, payload: res.data });
             })
