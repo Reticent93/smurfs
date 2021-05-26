@@ -1,11 +1,11 @@
 exports.handler = async function(event, context) {
     const express = require('express');
-    const cors = require('cors');
-    const port = 3333;
-
+    // const cors = require('cors');
+    // const port = 3333;
+    //
     const server = express();
     server.use(express.json());
-    server.use(cors());
+    // server.use(cors());
 
     const sendUserError = (msg, res) => {
         res.status(422);
@@ -77,9 +77,9 @@ exports.handler = async function(event, context) {
         }
     });
 
-    server.listen(port, (err) => {
-        if (err) console.log(err);
-        console.log(`server is listening on port ${port}`);
-    });
+    // server.listen(port, (err) => {
+    //     if (err) console.log(err);
+    //     console.log(`server is listening on port ${port}`);
+    // });
 
 }
